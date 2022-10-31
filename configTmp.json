@@ -34,14 +34,8 @@
             "settings": {
                 "clients": [
                     {
-                        "email": "Cheung",
-                        "id": "559c239c-bc9c-45d0-aa11-a67d88f1b507",
-                        "level": 0,
-                        "alterId": 0
-                    },
-                    {
                         "email": "Jeremy",
-                        "id": "8191bb5c-ba7c-6779-006b-848663e11526",
+                        id
                         "level": 0,
                         "alterId": 0
                     }
