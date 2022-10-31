@@ -1,0 +1,85 @@
+{
+    "log": {
+        "loglevel": "warning",
+        "access": "/var/log/v2ray/access.log",
+        "error": "/var/log/v2ray/error.log"
+    },
+    "stats": {},
+    "api": {
+        "tag": "api",
+        "services": [
+            "StatsService"
+        ]
+    },
+    "policy": {
+        "levels": {
+            "0": {
+                "statsUserUplink": true,
+                "statsUserDownlink": true
+            }
+        },
+        "system": {
+            "statsInboundUplink": true,
+            "statsInboundDownlink": true,
+            "statsOutboundUplink": true,
+            "statsOutboundDownlink": true
+        }
+    },
+    "inbounds": [
+        {
+            "tag": "tcp",
+            "port": 10053,
+            "listen": "127.0.0.1",
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "email": "Cheung",
+                        "id": "559c239c-bc9c-45d0-aa11-a67d88f1b507",
+                        "level": 0,
+                        "alterId": 0
+                    },
+                    {
+                        "email": "Jeremy",
+                        "id": "8191bb5c-ba7c-6779-006b-848663e11526",
+                        "level": 0,
+                        "alterId": 0
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "wsSettings": {
+                    "path": "/ray"
+                }
+            }
+        },
+        {
+            "tag": "api",
+            "port": 10054,
+            "listen": "127.0.0.1",
+            "protocol": "dokodemo-door",
+            "settings": {
+                "address": "127.0.0.1"
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "settings": {}
+        }
+    ],
+    "routing": {
+        "rules": [
+            {
+                "inboundTag": [
+                    "api"
+                ],
+                "outboundTag": "api",
+                "type": "field"
+            }
+        ],
+        "domainStrategy": "AsIs"
+    }
+}
