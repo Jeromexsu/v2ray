@@ -24,20 +24,18 @@ writeVRayConf() {
 }
 
 echo "deployment starts"
-# install git
-yun install git
 # get certificates
 # curl  https://get.acme.sh | sh
 # source ~/.bashrc
 # yum install socat
 # acme.sh --set-default-ca --server letsencrypt
 # acme.sh --issue -d jeromes.rocks --standalone
+# mkdir /etc/v2ray
 # mv  /root/.acme.sh/jeromes.rocks/jeromes.rocks.cer /etc/v2ray/v2ray.crt
 # mv /root/.acme.sh/jeromes.rocks/jeromes.rocks.key /etc/v2ray/v2ray.key
 
 # get and configure nginx
 amazon-linux-extras install nginx1
-git clone https://github.com/Jeromexsu/v2ray.git
 writeNginxConf() 
 
 # get and configure v2ray
@@ -49,7 +47,6 @@ writeVRayConf()
 systemctl start nginx
 # start v2ray
 systemctl start v2ray
-mkdir /etc/v2ray
 
 # open bbr
 echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
