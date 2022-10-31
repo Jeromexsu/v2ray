@@ -27,13 +27,13 @@ echo "deployment starts"
 # install git
 yun install git
 # get certificates
-curl  https://get.acme.sh | sh
-source ~/.bashrc
-yum install socat
-acme.sh --set-default-ca --server letsencrypt
-acme.sh --issue -d jeromes.rocks --standalone
-mv  /root/.acme.sh/jeromes.rocks/jeromes.rocks.cer /etc/v2ray/v2ray.crt
-mv /root/.acme.sh/jeromes.rocks/jeromes.rocks.key /etc/v2ray/v2ray.key
+# curl  https://get.acme.sh | sh
+# source ~/.bashrc
+# yum install socat
+# acme.sh --set-default-ca --server letsencrypt
+# acme.sh --issue -d jeromes.rocks --standalone
+# mv  /root/.acme.sh/jeromes.rocks/jeromes.rocks.cer /etc/v2ray/v2ray.crt
+# mv /root/.acme.sh/jeromes.rocks/jeromes.rocks.key /etc/v2ray/v2ray.key
 
 # get and configure nginx
 amazon-linux-extras install nginx1
