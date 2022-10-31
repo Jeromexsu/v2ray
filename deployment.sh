@@ -8,7 +8,7 @@ writeNginxConf() {
     echo "$line $domain;" >> /etc/nginx/nginx.conf
     else echo $line >> /etc/nginx/nginx.conf
     fi
-    done < ./v2ray/nginxTmp.conf
+    done < ./nginxTmp.conf
 }
 writeVRayConf() {
     id=$(v2ray uuid)
@@ -19,7 +19,7 @@ writeVRayConf() {
     echo "\"id\": \"$id\"," >> /usr/local/etc/v2ray/config.json
     else echo $line >> /usr/local/etc/v2ray/config.json
     fi
-    done < ./v2ray/configTmp.json
+    done < ./configTmp.json
     echo "uuid = $id"
 }
 
